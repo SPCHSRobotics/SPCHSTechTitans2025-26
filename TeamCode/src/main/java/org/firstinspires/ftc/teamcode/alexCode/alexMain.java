@@ -8,6 +8,10 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name="Basic: Omni Linear OpMode", group="Linear OpMode")
 @Disabled
+/*if u want the code to work u might wanna delete this @Disabled thing ^^^
+also if u want ur OpMode to have a cool name on the Driver hub, consider changing what is in the string (green text after name=) into something descriptive to this OpMode, like "Alex OpMode" or "Alex Testing Sandbox"
+thanks for reading, delete this comment later lol -Alina */
+
 public class alexMain extends LinearOpMode {
 
     // Declare OpMode members for each of the 4 motors.
