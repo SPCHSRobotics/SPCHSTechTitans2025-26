@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.alexCode;
+package org.firstinspires.ftc.teamcode.alexCode.teleOp;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -37,7 +37,7 @@ public class DriveTrainTT extends LinearOpMode {
             double max;
 
             double axial   = -gamepad1.left_stick_y;
-            double lateral =  gamepad1.left_stick_x;
+            double lateral =  gamepad1.left_stick_x * 1.1;
             double yaw     =  gamepad1.right_stick_x;
 
             double frontLeftPower  = axial + lateral + yaw;
