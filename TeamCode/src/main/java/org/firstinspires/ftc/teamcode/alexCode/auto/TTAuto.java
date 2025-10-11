@@ -52,7 +52,7 @@ public class TTAuto extends LinearOpMode {
         waitForStart();
 
         // action code here
-        encoderDrive(1, 1,1,,1,20);
+        encoderDrive(1, 1,1,1,1,20);
 
 
 
