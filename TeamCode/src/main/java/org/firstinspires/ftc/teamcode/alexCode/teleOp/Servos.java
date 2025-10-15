@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp (name = "TTServo")
+@TeleOp (name = "TTServo", group = "Linear OpMode")
 public class Servos extends LinearOpMode {
     public Servo intakeServo;
     public void init(HardwareMap hwMap) {
