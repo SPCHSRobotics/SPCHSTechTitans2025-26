@@ -16,7 +16,8 @@ public class IntakeTT extends LinearOpMode {
 
         waitForStart();
         while (opModeIsActive()) {
-            if (gamepad1.b) {
+
+            if (gamepad2.b) {
                 if (!isOn) {
                     intakeMotor.setPower(0.5);
                     isOn = true;
@@ -26,6 +27,7 @@ public class IntakeTT extends LinearOpMode {
                     isOn = false;
                 }
             }
+
         }
     }
 }

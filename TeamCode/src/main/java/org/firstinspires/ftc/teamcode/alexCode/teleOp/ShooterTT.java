@@ -16,7 +16,7 @@ public class ShooterTT extends LinearOpMode {
 
         waitForStart();
         while (opModeIsActive()) {
-            while (gamepad1.a) {
+            while (gamepad2.a) {
                 shooterMotor1.setPower(1);
                 shooterMotor2.setPower(-1);
             }
