@@ -13,6 +13,8 @@ public class IntakeTT extends LinearOpMode {
 
         intakeMotor = hardwareMap.get(DcMotor.class, "frontLeftDrive");
         boolean isOn = false;
+
+        waitForStart();
         while (opModeIsActive()) {
             if (gamepad1.b) {
                 if (!isOn) {
