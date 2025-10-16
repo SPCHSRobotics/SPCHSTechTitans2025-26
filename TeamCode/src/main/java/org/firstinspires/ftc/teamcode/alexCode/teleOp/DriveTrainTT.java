@@ -5,6 +5,11 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+/* jhit if you want to have one opmode that can run drivetrain, intake, outtake, and servos, you have
+to either put all the variables and loops in the same class, or make a separate class that you call
+into this main opmode as a function (for second method look at Celesteels 2025-26 repository and TeamCode package made by master alina)
+also stop leaving little andy to upload code, you guys must learn to upload code as software masters... i bought a usb-a to usb-c adapter
+--to put on the orange dongle-- inside of the white big toolbox (big bottom right drawer, please return it to original home after use*/
 @TeleOp(name="Titan OpMode", group="Linear OpMode")
 public class DriveTrainTT extends LinearOpMode {
 

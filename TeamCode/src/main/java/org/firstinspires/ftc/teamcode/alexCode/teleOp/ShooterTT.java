@@ -1,9 +1,12 @@
 package org.firstinspires.ftc.teamcode.alexCode.teleOp;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+@Disabled
+//Delete this ^^ if you are just testing Shooter, also you cannot have two TeleOps both names Titan OpMode, they will break the Driver hub lol
 @TeleOp(name="Titan OpMode", group="Linear OpMode")
 public class ShooterTT extends LinearOpMode {
     DcMotor shooterMotor1;
