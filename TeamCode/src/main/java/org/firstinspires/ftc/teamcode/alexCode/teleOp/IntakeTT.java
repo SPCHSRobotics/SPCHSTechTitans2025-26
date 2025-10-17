@@ -1,38 +1,33 @@
 package org.firstinspires.ftc.teamcode.alexCode.teleOp;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Gamepad;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 @Disabled
-//Delete this ^^ if you are just testing Intake, also you cannot have two TeleOps both names Titan OpMode, they will break the Driver hub lol
-@TeleOp (name="Titan OpMode", group="Linear OpMode")
-public class IntakeTT extends LinearOpMode {
-    DcMotor intakeMotor;
+public class IntakeTT {
+    public DcMotor intakeMotor;
+    public IntakeTT(HardwareMap hardwareMap) {
 
-    @Override
-    public void runOpMode() {
+        intakeMotor = hardwareMap.get(DcMotor.class, "intakeMotor");
 
-        intakeMotor = hardwareMap.get(DcMotor.class, "frontLeftDrive");
+    }
+    public void intakeTT(Gamepad gamepad, Telemetry telemetry) {
         boolean isOn = false;
-
-        waitForStart();
-        while (opModeIsActive()) {
-
-            if (gamepad2.b) {
-                if (!isOn) {
-                    intakeMotor.setPower(0.5);
-                    isOn = true;
-                }
-                if (isOn) {
-                    intakeMotor.setPower(0);
-                    isOn = false;
-                }
+        if (gamepad.b) {
+            if (!isOn) {
+                intakeMotor.setPower(0.5);
+                isOn = true;
+            } if (isOn) {
+                intakeMotor.setPower(0);
+                isOn = false;
             }
-
         }
     }
 }
+
 
 
