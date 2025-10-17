@@ -7,7 +7,6 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
-@Disabled
 public class IntakeTT {
     public DcMotor intakeMotor;
     public IntakeTT(HardwareMap hardwareMap) {
@@ -15,8 +14,8 @@ public class IntakeTT {
         intakeMotor = hardwareMap.get(DcMotor.class, "intakeMotor");
 
     }
-    //u should probably say if you are using gamepad 1 or 2 here
-    public void intakeTT(Gamepad gamepad, Telemetry telemetry) {
+    // Gamepad 2
+    public void intakeTTfx(Gamepad gamepad, Telemetry telemetry) {
         boolean isOn = false;
         if (gamepad.b) {
             if (!isOn) {

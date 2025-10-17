@@ -15,8 +15,8 @@ public class TeleOpMainTT extends LinearOpMode {
     public void runOpMode() {
         // Init Hardware
         DriveTT driversTT = new DriveTT(hardwareMap);
-        ShooterTT shooterTT = new ShooterTT(hardwareMap);
-        IntakeTT intakeTT = new IntakeTT(hardwareMap);
+        ShooterTT shootersTT = new ShooterTT(hardwareMap);
+        IntakeTT intakersTT = new IntakeTT(hardwareMap);
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -26,13 +26,11 @@ public class TeleOpMainTT extends LinearOpMode {
 
         while (opModeIsActive()) {
             // Robot Functions
-            driversTT.driveTT(gamepad1, telemetry);
-            shooterTT.shooterTT(gamepad2, telemetry);
-            intakeTT.intakeTT(gamepad2, telemetry);
-
+            driversTT.driveTTfx(gamepad1, telemetry);
+            shootersTT.shooterTTfx(gamepad2, telemetry);
+            intakersTT.intakeTTfx(gamepad2, telemetry);
 
             // Telemetry (will do later)
-
         }
 
     }
