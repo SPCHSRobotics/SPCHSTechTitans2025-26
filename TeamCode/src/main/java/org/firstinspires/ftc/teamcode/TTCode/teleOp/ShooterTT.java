@@ -9,6 +9,7 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 @Disabled
 public class ShooterTT {
+    //left or right??
     DcMotor shooterMotor1;
     DcMotor shooterMotor2;
 
@@ -17,6 +18,7 @@ public class ShooterTT {
         shooterMotor2 = hardwareMap.get(DcMotor.class, "shooterMotor2");
     }
 
+    //u should probably say if you are using gamepad 1 or 2 here
     public void shooterTT(Gamepad gamepad, Telemetry telemetry) {
         while (gamepad.a) {
             shooterMotor1.setPower(1);

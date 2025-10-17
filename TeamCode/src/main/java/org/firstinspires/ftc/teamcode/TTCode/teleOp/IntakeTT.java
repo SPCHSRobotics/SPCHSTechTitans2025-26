@@ -15,6 +15,7 @@ public class IntakeTT {
         intakeMotor = hardwareMap.get(DcMotor.class, "intakeMotor");
 
     }
+    //u should probably say if you are using gamepad 1 or 2 here
     public void intakeTT(Gamepad gamepad, Telemetry telemetry) {
         boolean isOn = false;
         if (gamepad.b) {
