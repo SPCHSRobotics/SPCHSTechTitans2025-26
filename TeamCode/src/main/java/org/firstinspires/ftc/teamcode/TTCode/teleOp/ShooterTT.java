@@ -17,9 +17,12 @@ public class ShooterTT {
 
     public void shooterTTfx(Gamepad gamepad, Telemetry telemetry) {
         // gamepad 2
-        while (gamepad.a) {
-            leftShooter.setPower(1);
-            rightShooter.setPower(-1);
+        if (gamepad.a) {
+            leftShooter.setPower(-1.0);
+            rightShooter.setPower(1.0);
+        } else {
+            leftShooter.setPower(0);
+            rightShooter.setPower(0);
         }
     }
 }

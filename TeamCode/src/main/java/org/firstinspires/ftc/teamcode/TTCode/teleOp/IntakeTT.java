@@ -15,15 +15,16 @@ public class IntakeTT {
 
     }
     // Gamepad 2
+    public boolean isOn = false;
     public void intakeTTfx(Gamepad gamepad, Telemetry telemetry) {
-        boolean isOn = false;
+
         if (gamepad.b) {
-            if (!isOn) {
-                intakeMotor.setPower(0.5);
-                isOn = true;
-            } if (isOn) {
+            if (isOn) {
                 intakeMotor.setPower(0);
                 isOn = false;
+            } else {
+                intakeMotor.setPower(0.5);
+                isOn = true;
             }
         }
     }
