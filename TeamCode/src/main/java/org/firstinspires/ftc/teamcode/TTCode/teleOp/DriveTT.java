@@ -43,7 +43,7 @@ public class DriveTT {
         max = Math.max(max, Math.abs(backLeftPower));
         max = Math.max(max, Math.abs(backRightPower));
 
-        if (max > 0.5) {
+        if (max > 0.35) {
             frontLeftPower  /= max;
             frontRightPower /= max;
             backLeftPower   /= max;
