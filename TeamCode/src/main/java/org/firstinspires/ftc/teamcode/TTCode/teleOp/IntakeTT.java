@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode.TTCode.teleOp;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -15,17 +14,12 @@ public class IntakeTT {
 
     }
     // Gamepad 2
-    public boolean isOn = false;
     public void intakeTTfx(Gamepad gamepad, Telemetry telemetry) {
 
         if (gamepad.b) {
-            if (isOn) {
-                intakeMotor.setPower(0);
-                isOn = false;
-            } else {
-                intakeMotor.setPower(0.5);
-                isOn = true;
-            }
+            intakeMotor.setPower(0.5);
+        } else {
+            intakeMotor.setPower(0);
         }
     }
 }

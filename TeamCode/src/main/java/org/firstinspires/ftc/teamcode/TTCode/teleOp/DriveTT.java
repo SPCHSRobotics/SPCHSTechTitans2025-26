@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode.TTCode.teleOp;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -44,7 +43,7 @@ public class DriveTT {
         max = Math.max(max, Math.abs(backLeftPower));
         max = Math.max(max, Math.abs(backRightPower));
 
-        if (max > 0.75) {
+        if (max > 0.5) {
             frontLeftPower  /= max;
             frontRightPower /= max;
             backLeftPower   /= max;
@@ -61,12 +60,12 @@ public class DriveTT {
         //      the setDirection() calls above.
         // Once the correct motors move in the correct direction re-comment this code.
 
-            /*
-            frontLeftPower  = gamepad1.x ? 1.0 : 0.0;  // X gamepad
-            backLeftPower   = gamepad1.a ? 1.0 : 0.0;  // A gamepad
-            frontRightPower = gamepad1.y ? 1.0 : 0.0;  // Y gamepad
-            backRightPower  = gamepad1.b ? 1.0 : 0.0;  // B gamepad
-            */
+/*
+            frontLeftPower  = gamepad.x ? 1.0 : 0.0;  // X gamepad
+            backLeftPower   = gamepad.a ? 1.0 : 0.0;  // A gamepad
+            frontRightPower = gamepad.y ? 1.0 : 0.0;  // Y gamepad
+            backRightPower  = gamepad.b ? 1.0 : 0.0;  // B gamepad
+*/
 
         // Send calculated power to wheels
         frontLeftDrive.setPower(frontLeftPower);
