@@ -17,7 +17,7 @@ public class IntakeTT {
     public void intakeTTfx(Gamepad gamepad, Telemetry telemetry) {
 
         if (gamepad.b) {
-            intakeMotor.setPower(0.5);
+            intakeMotor.setPower(1);
         } else {
             intakeMotor.setPower(0);
         }
