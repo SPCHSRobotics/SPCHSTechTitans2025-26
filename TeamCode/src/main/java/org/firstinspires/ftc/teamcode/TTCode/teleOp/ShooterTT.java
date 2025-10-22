@@ -19,9 +19,11 @@ public class ShooterTT {
         if (gamepad.a) {
             leftShooter.setPower(-0.45);
             rightShooter.setPower(0.45);
+            telemetry.addData("Shooter Status", "On");
         } else {
             leftShooter.setPower(0);
             rightShooter.setPower(0);
+            telemetry.addData("Shooter Status", "Off");
         }
     }
 }

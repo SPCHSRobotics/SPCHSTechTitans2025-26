@@ -18,8 +18,10 @@ public class IntakeTT {
 
         if (gamepad.b) {
             intakeMotor.setPower(1);
+            telemetry.addData("Intake Status", "On");
         } else {
             intakeMotor.setPower(0);
+            telemetry.addData("Intake Status", "Off");
         }
     }
 }
