@@ -18,7 +18,19 @@ public class IntakeTT {
 
         if (gamepad.b) {
             intakeMotor.setPower(1);
-            telemetry.addData("Intake Status", "On");
+            telemetry.addData("Intake Status", "Forward");
+        } else {
+            intakeMotor.setPower(0);
+            telemetry.addData("Intake Status", "Off");
+        }
+
+    }
+
+    public void outtakeTTfx(Gamepad gamepad, Telemetry telemetry) {
+
+        if (gamepad.x) {
+            intakeMotor.setPower(-1);
+            telemetry.addData("Intake Status", "Backward");
         } else {
             intakeMotor.setPower(0);
             telemetry.addData("Intake Status", "Off");
