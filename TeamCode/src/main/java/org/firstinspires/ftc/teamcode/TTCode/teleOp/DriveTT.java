@@ -19,7 +19,7 @@ public class DriveTT {
         frontRightDrive = hardwareMap.get(DcMotor.class, "frontRightDrive");
         backRightDrive = hardwareMap.get(DcMotor.class, "backRightDrive");
 
-        frontLeftDrive.setDirection(DcMotor.Direction.FORWARD);
+        frontLeftDrive.setDirection(DcMotor.Direction.REVERSE);
         backLeftDrive.setDirection(DcMotor.Direction.FORWARD);
         frontRightDrive.setDirection(DcMotor.Direction.REVERSE);
         backRightDrive.setDirection(DcMotor.Direction.REVERSE);
