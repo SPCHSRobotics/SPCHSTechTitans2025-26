@@ -16,10 +16,22 @@ public class ShooterTT {
 
     public void shooterTTfx(Gamepad gamepad, Telemetry telemetry) {
         // gamepad 2
-        if (gamepad.a) {
-            leftShooter.setPower(-0.45);
-            rightShooter.setPower(0.45);
-            telemetry.addData("Shooter Status", "On");
+        if (gamepad.y) {
+            leftShooter.setPower(-0.4);
+            rightShooter.setPower(-0.4);
+            telemetry.addData("Shooter Status", "Out");
+        } else {
+            leftShooter.setPower(0);
+            rightShooter.setPower(0);
+            telemetry.addData("Shooter Status", "Off");
+        }
+    }
+    public void shitterTTfx(Gamepad gamepad, Telemetry telemetry) {
+
+        if (gamepad.x) {
+            leftShooter.setPower(0.2);
+            rightShooter.setPower(0.2);
+            telemetry.addData("Shooter Status", "In");
         } else {
             leftShooter.setPower(0);
             rightShooter.setPower(0);
