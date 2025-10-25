@@ -28,7 +28,6 @@ public class TeleOpMainTT extends LinearOpMode {
             // Robot Functions
             driversTT.driveTTfx(gamepad1, telemetry);
             shootersTT.shooterTTfx(gamepad2, telemetry);
-            shootersTT.shitterTTfx(gamepad2, telemetry);
             intakersTT.intakeTTfx(gamepad2, telemetry);
             intakersTT.outtakeTTfx(gamepad2, telemetry);
 

@@ -16,7 +16,7 @@ public class ShooterTT {
 
     public void shooterTTfx(Gamepad gamepad, Telemetry telemetry) {
         // gamepad 2
-        if (gamepad.y) {
+        if (gamepad.a) {
             leftShooter.setPower(-0.4);
             rightShooter.setPower(-0.4);
             telemetry.addData("Shooter Status", "Out");
@@ -26,7 +26,7 @@ public class ShooterTT {
             telemetry.addData("Shooter Status", "Off");
         }
     }
-    public void shitterTTfx(Gamepad gamepad, Telemetry telemetry) {
+    /*public void shitterTTfx(Gamepad gamepad, Telemetry telemetry) {
 
         if (gamepad.x) {
             leftShooter.setPower(0.2);
@@ -37,6 +37,6 @@ public class ShooterTT {
             rightShooter.setPower(0);
             telemetry.addData("Shooter Status", "Off");
         }
-    }
+    }*/
 }
 
