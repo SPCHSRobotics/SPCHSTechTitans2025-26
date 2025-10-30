@@ -26,6 +26,8 @@ public class TeleOpMainTT extends LinearOpMode {
 
         while (opModeIsActive()) {
             // Robot Functions
+
+            // TODO: Add comments in the individual files to make more readable -Mentor Lucy
             driversTT.driveTTfx(gamepad1, telemetry);
             shootersTT.shooterTTfx(gamepad2, telemetry);
             intakersTT.intakeTTfx(gamepad2, telemetry);
