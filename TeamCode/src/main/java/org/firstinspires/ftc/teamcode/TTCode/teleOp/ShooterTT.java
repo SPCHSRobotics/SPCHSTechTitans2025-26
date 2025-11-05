@@ -19,8 +19,8 @@ public class ShooterTT {
 
         // Shoots artifact
         if (gamepad.a) {
-            leftShooter.setPower(-0.45);
-            rightShooter.setPower(-0.45);
+            leftShooter.setPower(-0.5);
+            rightShooter.setPower(-0.5);
             telemetry.addData("Shooter Status", "Out");
         } else {
             leftShooter.setPower(0);

@@ -13,12 +13,17 @@ public class alexAuto extends LinearOpMode {
     private DcMotor frontLeftDrive;
     private DcMotor backRightDrive;
     private DcMotor frontRightDrive;
+    private DcMotor leftShooter;
+    private DcMotor rightShooter;
+    private DcMotor intakeMotor;
+
 
     private ElapsedTime runtime = new ElapsedTime();
 
 
     static final double     FORWARD_SPEED = 0.6;
     static final double     TURN_SPEED    = 0.5;
+    static final double REVERSE_SPEED = -0.4;
 
     @Override
     public void runOpMode() {
@@ -28,6 +33,11 @@ public class alexAuto extends LinearOpMode {
         backLeftDrive = hardwareMap.get(DcMotor.class, "backLeftDrive");
         frontRightDrive = hardwareMap.get(DcMotor.class, "frontRightDrive");
         backRightDrive = hardwareMap.get(DcMotor.class, "backRightDrive");
+
+        leftShooter = hardwareMap.get(DcMotor.class, "leftShooter");
+        rightShooter = hardwareMap.get(DcMotor.class, "rightShooter");
+
+        intakeMotor = hardwareMap.get(DcMotor.class, "intakeMotor");
 
         // To drive forward, most robots need the motor on one side to be reversed, because the axles point in opposite directions.
         // When run, this OpMode should start both motors driving forward. So adjust these two lines based on your first test drive.
@@ -46,16 +56,47 @@ public class alexAuto extends LinearOpMode {
 
         // Step through each leg of the path, ensuring that the OpMode has not been stopped along the way.
 
-        // Step 1:  Drive forward for 3 seconds
-        frontLeftDrive.setPower(FORWARD_SPEED);
-        backLeftDrive.setPower(FORWARD_SPEED);
-        frontRightDrive.setPower(FORWARD_SPEED);
-        backRightDrive.setPower(FORWARD_SPEED);
+        // Step 1:  Drive reverse for 1 second
+        frontLeftDrive.setPower(REVERSE_SPEED);
+        backLeftDrive.setPower(REVERSE_SPEED);
+        frontRightDrive.setPower(REVERSE_SPEED);
+        backRightDrive.setPower(REVERSE_SPEED);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < 1.0)) {
             telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
+
+        frontLeftDrive.setPower(0);
+        backLeftDrive.setPower(0);
+        frontRightDrive.setPower(0);
+        backRightDrive.setPower(0);
+
+        leftShooter.setPower(-0.4);
+        rightShooter.setPower(-0.4);
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < 3.0)) {
+            telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
+
+        intakeMotor.setPower(-0.7);
+
+        runtime.reset();
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+            telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
+
+        frontLeftDrive.setPower(0);
+        backLeftDrive.setPower(0);
+        frontRightDrive.setPower(0);
+        backRightDrive.setPower(0);
+        telemetry.addData("Path", "Complete");
+        telemetry.update();
+        sleep(1000);
 
         // Step 2:  Spin right for 1.3 seconds
         /*
@@ -77,13 +118,6 @@ public class alexAuto extends LinearOpMode {
         } */
 
         // Step 4:  Stop
-        frontLeftDrive.setPower(0);
-        backLeftDrive.setPower(0);
-        frontRightDrive.setPower(0);
-        backRightDrive.setPower(0);
 
-        telemetry.addData("Path", "Complete");
-        telemetry.update();
-        sleep(1000);
     }
 }
