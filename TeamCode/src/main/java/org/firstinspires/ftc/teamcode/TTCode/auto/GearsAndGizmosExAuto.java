@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous
-public class TTAuto extends LinearOpMode {
+public class GearsAndGizmosExAuto extends LinearOpMode {
 
     private DcMotor frontLeft = null;
     private DcMotor frontRight = null;

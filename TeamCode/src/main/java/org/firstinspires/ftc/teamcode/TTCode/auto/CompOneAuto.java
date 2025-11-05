@@ -1,13 +1,12 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode;
+package org.firstinspires.ftc.teamcode.TTCode.auto;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous (name = "alexAuto")
-public class alexAuto extends LinearOpMode {
+@Autonomous (name="Comp One Auto")
+public class CompOneAuto extends LinearOpMode {
     /* Declare OpMode members. */
     private DcMotor backLeftDrive;
     private DcMotor frontLeftDrive;
@@ -81,29 +80,16 @@ public class alexAuto extends LinearOpMode {
             telemetry.update();
         }
 
-        intakeMotor.setPower(-0.2);
+        intakeMotor.setPower(-0.7);
 
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
             telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
 
-        intakeMotor.setPower(0);
 
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1)) {
-            telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
-            telemetry.update();
-        }
-
-        intakeMotor.setPower(-0.2);
-
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2)) {
-            telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
-            telemetry.update();
-        }
 
         frontLeftDrive.setPower(0);
         backLeftDrive.setPower(0);
