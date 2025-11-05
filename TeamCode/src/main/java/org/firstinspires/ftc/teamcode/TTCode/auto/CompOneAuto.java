@@ -61,11 +61,12 @@ public class CompOneAuto extends LinearOpMode {
         frontRightDrive.setPower(REVERSE_SPEED);
         backRightDrive.setPower(REVERSE_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 1.2)) {
             telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
 
+        // stop bot and start shooter
         frontLeftDrive.setPower(0);
         backLeftDrive.setPower(0);
         frontRightDrive.setPower(0);
@@ -80,6 +81,7 @@ public class CompOneAuto extends LinearOpMode {
             telemetry.update();
         }
 
+        // intake the ball up the ramp
         intakeMotor.setPower(-0.7);
 
         runtime.reset();
@@ -90,7 +92,7 @@ public class CompOneAuto extends LinearOpMode {
         }
 
 
-
+        // stop
         frontLeftDrive.setPower(0);
         backLeftDrive.setPower(0);
         frontRightDrive.setPower(0);
@@ -98,27 +100,6 @@ public class CompOneAuto extends LinearOpMode {
         telemetry.addData("Path", "Complete");
         telemetry.update();
         sleep(1000);
-
-        // Step 2:  Spin right for 1.3 seconds
-        /*
-        leftDrive.setPower(TURN_SPEED);
-        rightDrive.setPower(-TURN_SPEED);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.3)) {
-            telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
-            telemetry.update();
-        }
-
-        // Step 3:  Drive Backward for 1 Second
-        leftDrive.setPower(-FORWARD_SPEED);
-        rightDrive.setPower(-FORWARD_SPEED);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.0)) {
-            telemetry.addData("Path", "Leg 3: %4.1f S Elapsed", runtime.seconds());
-            telemetry.update();
-        } */
-
-        // Step 4:  Stop
 
     }
 }
