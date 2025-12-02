@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.TTCode.auto;
+package org.firstinspires.ftc.teamcode.sandboxes.gearsAndGizmos;
 
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;

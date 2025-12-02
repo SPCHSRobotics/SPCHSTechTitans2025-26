@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.TTCode.auto;
+package org.firstinspires.ftc.teamcode.TTCode.auto.pastAutos;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous (name="Comp One Auto")
-public class CompOneAuto extends LinearOpMode {
+public class mock1Auto extends LinearOpMode {
     /* Declare OpMode members. */
     private DcMotor backLeftDrive;
     private DcMotor frontLeftDrive;

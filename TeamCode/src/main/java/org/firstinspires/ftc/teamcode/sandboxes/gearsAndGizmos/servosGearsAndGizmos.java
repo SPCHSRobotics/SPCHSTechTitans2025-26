@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode;
+package org.firstinspires.ftc.teamcode.sandboxes.gearsAndGizmos;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
