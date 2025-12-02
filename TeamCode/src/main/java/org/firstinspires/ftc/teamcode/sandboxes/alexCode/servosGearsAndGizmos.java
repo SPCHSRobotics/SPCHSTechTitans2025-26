@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 //also should be in titan opmode if not just testing only servo
 @TeleOp (name = "TTServo", group = "Linear OpMode")
-public class Servos extends LinearOpMode {
+public class servosGearsAndGizmos extends LinearOpMode {
     public Servo intakeServo;
     public void init(HardwareMap hwMap) {
         intakeServo = hwMap.get(Servo.class, "nameofServo");
