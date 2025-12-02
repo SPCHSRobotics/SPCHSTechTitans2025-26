@@ -132,7 +132,6 @@ public class mock2Auto extends OpMode {
                 break;
             case intake1_shootPos:
                 if (!follower.isBusy()) {
-                    // TODO intake function (unpowers motors)
                     follower.followPath(toShootPos1, true);
                     set1Completed = true;
                     setPathState(PathState.shootArtifacts);
@@ -147,14 +146,12 @@ public class mock2Auto extends OpMode {
                 break;
             case intake2:
                 if (!follower.isBusy()) {
-                    // TODO intake function (power motors)
                     follower.followPath(intake2, true);
                     setPathState(PathState.intake2_shootPos);
                 }
                 break;
             case intake2_shootPos:
                 if (!follower.isBusy()) {
-                    // TODO intake function (unpowers motors)
                     follower.followPath(toShootPos2, true);
                     set2Completed = true;
                     setPathState(PathState.shootArtifacts);
@@ -169,7 +166,6 @@ public class mock2Auto extends OpMode {
                 break;
             case intake3:
                 if (!follower.isBusy()) {
-                    // TODO intake function (power motors)
                     follower.followPath(intake3, true);
                     setPathState(PathState.intake3_shootPos);
                 }

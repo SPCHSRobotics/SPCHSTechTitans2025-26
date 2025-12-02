@@ -73,6 +73,10 @@ public class alexDriveTrainMock2 {
         backRightDrive.setPower(backRightPower);
         backLeftDrive.setPower(backLeftPower);
 
-        // Telemetry (I MIGHT get this done)
+        // Telemetry
+        telemetry.addData("frontRightPower", frontRightPower);
+        telemetry.addData("frontLeftPower", frontLeftPower);
+        telemetry.addData("backRightPower", backRightPower);
+        telemetry.addData("backLeftPower", backLeftPower);
     }
 }
