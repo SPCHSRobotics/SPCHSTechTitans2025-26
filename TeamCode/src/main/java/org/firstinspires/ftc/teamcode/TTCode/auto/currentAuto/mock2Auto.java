@@ -42,7 +42,6 @@ public class mock2Auto extends OpMode {
     PathState pathState;
 
 
-
     // Positions on the field
     private final Pose startPos = new Pose(24.3590333716916,127.59493670886077,Math.toRadians(143.5));
     private final Pose shootPos = new Pose(48.22094361334867,107.37859608745686,Math.toRadians(143.5));
@@ -53,7 +52,6 @@ public class mock2Auto extends OpMode {
     private final Pose intake2Pos = new Pose(14.085155350978136,59.9861910241657,Math.toRadians(180));
     private final Pose intake3Pos = new Pose(14.085155350978136,35.4614499424626,Math.toRadians(180));
     private final Pose endPos = new Pose(18.890678941311855,70.9228998849252,Math.toRadians(90));
-
 
 
     // Paths between positions
@@ -84,6 +82,7 @@ public class mock2Auto extends OpMode {
         // end pos (prepares to open the gate)
         endPath = buildPath(shootPos, endPos);
     }
+
 
 
 
