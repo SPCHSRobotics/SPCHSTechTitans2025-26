@@ -30,7 +30,7 @@ public class AlexDriveTrainMock2 {
         backLeftDrive.setDirection(DcMotor.Direction.FORWARD);
 
         // Initialize IMU
-        IMU imu = hardwareMap.get(IMU.class, "imu");
+        imu = hardwareMap.get(IMU.class, "imu");
 
         RevHubOrientationOnRobot revHubOrientation = new RevHubOrientationOnRobot(
                 RevHubOrientationOnRobot.LogoFacingDirection.UP,
@@ -38,6 +38,7 @@ public class AlexDriveTrainMock2 {
         );
 
         imu.initialize(new IMU.Parameters(revHubOrientation));
+        imu.resetYaw();
     }
 
     // code (untested) to drive using vectors and angles for more accurate driving
@@ -143,5 +144,6 @@ public class AlexDriveTrainMock2 {
         double newY = r * Math.sin(theta);
 
         this.alexDriveV2(newX, newY, turn);
+
     }
 }
