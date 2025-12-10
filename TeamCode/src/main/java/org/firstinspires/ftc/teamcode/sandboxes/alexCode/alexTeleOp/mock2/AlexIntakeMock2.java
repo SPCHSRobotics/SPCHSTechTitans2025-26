@@ -13,7 +13,7 @@ public class AlexIntakeMock2 {
     }
 
     public void intake(Boolean on, Telemetry telemetry) {
-        double intakePower = 0.5;
+        double intakePower = -0.5;
         double off = 0;
         if (on) {
             intakeMotor.setPower(intakePower);
@@ -21,4 +21,15 @@ public class AlexIntakeMock2 {
             intakeMotor.setPower(off);
         }
     }
+
+    public void outtake(Boolean on, Telemetry telemetry) {
+        double outtakePower = 0.3;
+        double off = 0;
+        if (on) {
+            intakeMotor.setPower(outtakePower);
+        } else {
+            intakeMotor.setPower(off);
+        }
+    }
+
 }
