@@ -12,12 +12,15 @@ public class alexMainMock2 extends OpMode {
     AlexDriveTrainMock2 driveTrain = new AlexDriveTrainMock2();
     AlexIntakeMock2 intake = new AlexIntakeMock2();
     AlexShooterMock2 shooter = new AlexShooterMock2();
+    alexDriveMockV1 drive = new alexDriveMockV1();
+
 
     public void init() {
         // initialize hardware
         //driveTrain.initDriveMotors(hardwareMap);
         intake.initIntake(hardwareMap);
         shooter.initShooter(hardwareMap);
+        drive.initAlexDriveV1(hardwareMap);
 
     }
 
@@ -26,14 +29,14 @@ public class alexMainMock2 extends OpMode {
 
         // drivetrain
         double x, y, turn;
-        x = gamepad1.left_stick_x;
+        x = -gamepad1.left_stick_x;
         y = -gamepad1.left_stick_y;
         turn = gamepad1.right_stick_x;
 
         // Intake/Shooters
-        boolean intakeHold, shooterToggle, outtakeHold;
+        boolean intakeHold, shooterHold, outtakeHold;
         intakeHold = gamepad2.a;
-        shooterToggle = gamepad2.b;
+        shooterHold = gamepad2.b;
         outtakeHold = gamepad2.x;
 
         
@@ -43,7 +46,8 @@ public class alexMainMock2 extends OpMode {
         //driveTrain.alexFieldCentricDriveV2(x,y,turn); // drives from the perspective of the field
         intake.intake(intakeHold, telemetry);
         intake.outtake(outtakeHold, telemetry);
-        shooter.shooterFXToggle(shooterToggle, telemetry);
+        shooter.shooterFXHold(shooterHold, telemetry);
+        drive.driveTTfx(x, y, turn, telemetry);
 
     }
 }

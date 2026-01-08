@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 /* i bought a usb-a to usb-c adapter
 --to put on the orange dongle-- inside of the white big toolbox (big bottom right drawer, please return it to original home after use*/
 
-@TeleOp (name="Tech Titans OpMode Bot 1", group="Linear OpMode")
+@TeleOp (name="Alex OpMode Bot 1", group="Linear OpMode")
 public class alexMainMock1 extends LinearOpMode {
     private final ElapsedTime runtime = new ElapsedTime();
 

@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexTeleOp.mock2;
 
+import android.sax.StartElementListener;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -7,31 +9,37 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 public class AlexShooterMock2 {
-    DcMotor shooterMotor;
+    DcMotor shooterMotorLeft, shooterMotorRight;
 
     public void initShooter(HardwareMap hwMap) {
-        shooterMotor = hwMap.get(DcMotor.class, "shooterMotor");
+        shooterMotorLeft = hwMap.get(DcMotor.class, "leftShooter");
+        shooterMotorRight = hwMap.get(DcMotor.class, "rightShooter");
     }
 
     Boolean isActive = false;
-    double shootingPower = 0.3;
+    double shootingPower = 0.52;
     public void shooterFXToggle(Boolean pressed, Telemetry telemetry) {
         if (pressed) {
             if (!isActive) {
-                shooterMotor.setPower(shootingPower);
+                shooterMotorLeft.setPower(-shootingPower);
+                shooterMotorRight.setPower(-shootingPower);
                 isActive = true;
             } else if (isActive) {
-                shooterMotor.setPower(0);
+                shooterMotorLeft.setPower(0);
+                shooterMotorRight.setPower(0);
                 isActive = false;
             }
         }
     }
 
-    public void shooterFXHold(boolean pressed, Telemetry telemetry) {
+    public void shooterFXHold(Boolean pressed, Telemetry telemetry) {
         if (pressed) {
-            shooterMotor.setPower(shootingPower);
+            shooterMotorLeft.setPower(-shootingPower);
+            shooterMotorRight.setPower(-shootingPower);
         } else {
-            shooterMotor.setPower(0);
+            shooterMotorLeft.setPower(0);
+            shooterMotorRight.setPower(0);
         }
     }
+
 }
