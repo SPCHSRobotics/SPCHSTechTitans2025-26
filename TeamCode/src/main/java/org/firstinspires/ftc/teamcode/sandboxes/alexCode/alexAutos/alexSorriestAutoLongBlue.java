@@ -19,11 +19,13 @@ public class alexSorriestAutoLongBlue extends LinearOpMode {
         waitForStart();
 
         // Autonomous procedure
-        //robotFunctions.moveForward(0.2);
-        //robotFunctions.turnLeft(0.12);
+        robotFunctions.moveForward(0.2);
+        robotFunctions.turnLeft(0.1);
         robotFunctions.shoot();
+        robotFunctions.turnRight(0.08);
+        robotFunctions.strafeLeft(0.5);
 
-        //robotFunctions.end();
+        robotFunctions.end();
         sleep(1000);
 
 

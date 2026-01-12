@@ -3,11 +3,10 @@ package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous (name = "alexAuto")
-public class alexSorriestAuto extends LinearOpMode {
+@Autonomous (name = "alexAuto short blue")
+public class alexSorriestAutoBlue extends LinearOpMode {
     /* Declare OpMode members. */
     private DcMotor backLeftDrive;
     private DcMotor frontLeftDrive;
@@ -62,7 +61,7 @@ public class alexSorriestAuto extends LinearOpMode {
         frontRightDrive.setPower(REVERSE_SPEED);
         backRightDrive.setPower(REVERSE_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.7)) {
+        while (opModeIsActive() && (runtime.seconds() < 2.2)) {
             telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -84,7 +83,7 @@ public class alexSorriestAuto extends LinearOpMode {
         intakeMotor.setPower(-0.6);
 
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 0.11)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.13)) {
             telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -100,7 +99,7 @@ public class alexSorriestAuto extends LinearOpMode {
         intakeMotor.setPower(-0.6);
 
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 0.11)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.13)) {
             telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -125,29 +124,37 @@ public class alexSorriestAuto extends LinearOpMode {
         leftShooter.setPower(0);
         rightShooter.setPower(0);
 
-        telemetry.addData("Path", "Complete");
-        telemetry.update();
-        sleep(1000);
 
-        // Step 2:  Spin right for 1.3 seconds
-        /*
-        leftDrive.setPower(TURN_SPEED);dw
-        rightDrive.setPower(-TURN_SPEED);
+
+
+        frontLeftDrive.setPower(FORWARD_SPEED);
+        backLeftDrive.setPower(FORWARD_SPEED);
+        frontRightDrive.setPower(FORWARD_SPEED);
+        backRightDrive.setPower(FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.3)) {
-            telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
+        while (opModeIsActive() && (runtime.seconds() < 0.4)) {
+            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
 
-        // Step 3:  Drive Backward for 1 Second
-        leftDrive.setPower(-FORWARD_SPEED);
-        rightDrive.setPower(-FORWARD_SPEED);
+        frontLeftDrive.setPower(-FORWARD_SPEED);
+        backLeftDrive.setPower(FORWARD_SPEED);
+        frontRightDrive.setPower(FORWARD_SPEED);
+        backRightDrive.setPower(-FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.0)) {
-            telemetry.addData("Path", "Leg 3: %4.1f S Elapsed", runtime.seconds());
+        while (opModeIsActive() && (runtime.seconds() < 0.3)) {
+            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
-        } */
+        }
 
+        frontLeftDrive.setPower(0);
+        backLeftDrive.setPower(0);
+        frontRightDrive.setPower(0);
+        backRightDrive.setPower(0);
+
+        telemetry.addData("Path", "Complete");
+        telemetry.update();
+        sleep(1000);
         // Step 4:  Stop
 
     }

@@ -18,7 +18,7 @@ public class AutoTimeFunctions {
     // power constants
     final static double FORWARD_SPEED = 0.5;
     final static double TURN_SPEED = 1;
-    final static double INTAKE_SPEED = -0.3;
+    final static double INTAKE_SPEED = -0.6;
 
     // misc
     private final ElapsedTime runtime = new ElapsedTime();
@@ -76,9 +76,26 @@ public class AutoTimeFunctions {
     }
 
     public void turnRight(double duration) {
-        frontLeftDrive.setPower(-TURN_SPEED);
+        frontLeftDrive.setPower(TURN_SPEED);
+        backLeftDrive.setPower(TURN_SPEED);
+        frontRightDrive.setPower(-TURN_SPEED);
+        backRightDrive.setPower(-TURN_SPEED);
+        runtime.reset();
+
+        while (!main.opModeIsActive() && runtime.seconds() < duration) {
+            main.telemetry.update();
+        }
+
+        frontLeftDrive.setPower(0);
+        backLeftDrive.setPower(0);
+        frontRightDrive.setPower(0);
+        backRightDrive.setPower(0);
+    }
+
+    public void strafeLeft(double duration) {
+        frontLeftDrive.setPower(TURN_SPEED);
         backLeftDrive.setPower(-TURN_SPEED);
-        frontRightDrive.setPower(TURN_SPEED);
+        frontRightDrive.setPower(-TURN_SPEED);
         backRightDrive.setPower(TURN_SPEED);
         runtime.reset();
 
@@ -92,10 +109,27 @@ public class AutoTimeFunctions {
         backRightDrive.setPower(0);
     }
 
+    public void strafeRight(double duration) {
+        frontLeftDrive.setPower(-TURN_SPEED);
+        backLeftDrive.setPower(TURN_SPEED);
+        frontRightDrive.setPower(TURN_SPEED);
+        backRightDrive.setPower(-TURN_SPEED);
+        runtime.reset();
+
+        while (!main.opModeIsActive() && runtime.seconds() < duration) {
+            main.telemetry.update();
+        }
+
+        frontLeftDrive.setPower(0);
+        backLeftDrive.setPower(0);
+        frontRightDrive.setPower(0);
+        backRightDrive.setPower(0);
+    }
+
     public void shoot() {
-        final double INTAKE_HOLD = -0.7;
-        final double INTAKE_INTERVAL = 0.6;
-        final double SHOOTER_POWER = -0.66;
+        final double INTAKE_HOLD = -0.07;
+        final double INTAKE_INTERVAL = 0.13 ;
+        final double SHOOTER_POWER = -0.65;
         final double SHOOTER_WAIT_TIME = 4;
 
         leftShooter.setPower(SHOOTER_POWER);
