@@ -1,14 +1,12 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos;
+package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos.paths;
 
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.robotcore.external.Telemetry;
-
-
-public class AutoTimeFunctions {
+@Autonomous (name = "alexAuto long red")
+public class alexAutoLongRed1 extends LinearOpMode {
 
     // opmode members
     DcMotor frontLeftDrive, backLeftDrive, frontRightDrive, backRightDrive;
@@ -16,30 +14,12 @@ public class AutoTimeFunctions {
     DcMotor intakeMotor;
 
     // power constants
-    final static double FORWARD_SPEED = 0.5;
-    final static double TURN_SPEED = 1;
-    final static double INTAKE_SPEED = -0.6;
+    final double FORWARD_SPEED = 0.5;
+    final double TURN_SPEED = 1;
+    final double INTAKE_SPEED = -0.6;
 
     // misc
-    private final ElapsedTime runtime = new ElapsedTime();
-    alexSorriestAutoLongBlue main = new alexSorriestAutoLongBlue();
-
-    public AutoTimeFunctions(HardwareMap hwMap) {
-        frontLeftDrive = hwMap.get(DcMotor.class, "frontLeftDrive");
-        backLeftDrive = hwMap.get(DcMotor.class, "backLeftDrive");
-        frontRightDrive = hwMap.get(DcMotor.class, "frontRightDrive");
-        backRightDrive = hwMap.get(DcMotor.class, "backRightDrive");
-
-        intakeMotor = hwMap.get(DcMotor.class, "intakeMotor");
-
-        leftShooter = hwMap.get(DcMotor.class, "leftShooter");
-        rightShooter = hwMap.get(DcMotor.class, "rightShooter");
-
-        frontLeftDrive.setDirection(DcMotor.Direction.FORWARD);
-        backLeftDrive.setDirection(DcMotor.Direction.FORWARD);
-        frontRightDrive.setDirection(DcMotor.Direction.FORWARD);
-        backRightDrive.setDirection(DcMotor.Direction.FORWARD);
-    }
+    final ElapsedTime runtime = new ElapsedTime();
 
     public void moveForward(double duration) {
         frontLeftDrive.setPower(FORWARD_SPEED);
@@ -48,8 +28,8 @@ public class AutoTimeFunctions {
         backRightDrive.setPower(FORWARD_SPEED);
 
         runtime.reset();
-        while (!main.opModeIsActive() && runtime.seconds() < duration) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < duration) {
+            telemetry.update();
         }
 
         frontLeftDrive.setPower(0);
@@ -65,8 +45,8 @@ public class AutoTimeFunctions {
         backRightDrive.setPower(TURN_SPEED);
         runtime.reset();
 
-        while (!main.opModeIsActive() && runtime.seconds() < duration) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < duration) {
+            telemetry.update();
         }
 
         frontLeftDrive.setPower(0);
@@ -82,8 +62,8 @@ public class AutoTimeFunctions {
         backRightDrive.setPower(-TURN_SPEED);
         runtime.reset();
 
-        while (!main.opModeIsActive() && runtime.seconds() < duration) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < duration) {
+            telemetry.update();
         }
 
         frontLeftDrive.setPower(0);
@@ -99,8 +79,8 @@ public class AutoTimeFunctions {
         backRightDrive.setPower(TURN_SPEED);
         runtime.reset();
 
-        while (!main.opModeIsActive() && runtime.seconds() < duration) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < duration) {
+            telemetry.update();
         }
 
         frontLeftDrive.setPower(0);
@@ -116,8 +96,8 @@ public class AutoTimeFunctions {
         backRightDrive.setPower(-TURN_SPEED);
         runtime.reset();
 
-        while (!main.opModeIsActive() && runtime.seconds() < duration) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < duration) {
+            telemetry.update();
         }
 
         frontLeftDrive.setPower(0);
@@ -136,43 +116,43 @@ public class AutoTimeFunctions {
         rightShooter.setPower(SHOOTER_POWER);
 
         runtime.reset();
-        while (!main.opModeIsActive() && runtime.seconds() < SHOOTER_WAIT_TIME) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < SHOOTER_WAIT_TIME) {
+            telemetry.update();
         }
 
         intakeMotor.setPower(INTAKE_SPEED);
 
         runtime.reset();
-        while (!main.opModeIsActive() && runtime.seconds() < INTAKE_INTERVAL) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < INTAKE_INTERVAL) {
+            telemetry.update();
         }
 
         intakeMotor.setPower(INTAKE_HOLD);
 
         runtime.reset();
-        while (!main.opModeIsActive() && runtime.seconds() < SHOOTER_WAIT_TIME) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < SHOOTER_WAIT_TIME) {
+            telemetry.update();
         }
 
         intakeMotor.setPower(INTAKE_SPEED);
 
         runtime.reset();
-        while (!main.opModeIsActive() && runtime.seconds() < INTAKE_INTERVAL) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < INTAKE_INTERVAL) {
+            telemetry.update();
         }
 
         intakeMotor.setPower(INTAKE_HOLD);
 
         runtime.reset();
-        while (!main.opModeIsActive() && runtime.seconds() < SHOOTER_WAIT_TIME) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < SHOOTER_WAIT_TIME) {
+            telemetry.update();
         }
 
         intakeMotor.setPower(INTAKE_SPEED);
 
         runtime.reset();
-        while (!main.opModeIsActive() && runtime.seconds() < 1.0) {
-            main.telemetry.update();
+        while (opModeIsActive() && runtime.seconds() < 1.0) {
+            telemetry.update();
         }
 
         intakeMotor.setPower(0);
@@ -188,5 +168,40 @@ public class AutoTimeFunctions {
         backLeftDrive.setPower(0);
         frontRightDrive.setPower(0);
         backRightDrive.setPower(0);
+    }
+
+    @Override
+    public void runOpMode() {
+
+        // init
+        frontLeftDrive = hardwareMap.get(DcMotor.class, "frontLeftDrive");
+        backLeftDrive = hardwareMap.get(DcMotor.class, "backLeftDrive");
+        frontRightDrive = hardwareMap.get(DcMotor.class, "frontRightDrive");
+        backRightDrive = hardwareMap.get(DcMotor.class, "backRightDrive");
+        intakeMotor = hardwareMap.get(DcMotor.class, "intakeMotor");
+        leftShooter = hardwareMap.get(DcMotor.class, "leftShooter");
+        rightShooter = hardwareMap.get(DcMotor.class, "rightShooter");
+
+        frontLeftDrive.setDirection(DcMotor.Direction.FORWARD);
+        backLeftDrive.setDirection(DcMotor.Direction.FORWARD);
+        frontRightDrive.setDirection(DcMotor.Direction.FORWARD);
+        backRightDrive.setDirection(DcMotor.Direction.FORWARD);
+
+
+        telemetry.addData("Status", "Ready to run");
+        telemetry.update();
+
+        waitForStart();
+
+        // Main path
+        moveForward(0.2);
+        turnRight(0.1);
+        shoot();
+        turnLeft(0.08);
+        strafeRight(0.5);
+
+        end();
+        sleep(1000);
+
     }
 }

@@ -1,11 +1,11 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos;
+package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos.autonomousFunctions;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp (name="Test Encoders")
-public class encoderConstants extends LinearOpMode {
+public class encoderTests extends LinearOpMode {
     DcMotor
             leftShooter, rightShooter,
             intakeMotor;

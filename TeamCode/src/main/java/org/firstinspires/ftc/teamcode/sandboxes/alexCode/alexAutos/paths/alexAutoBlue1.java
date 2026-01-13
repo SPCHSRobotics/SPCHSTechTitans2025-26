@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos;
+package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos.paths;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous (name = "alexAuto short blue")
-public class alexSorriestAutoBlue extends LinearOpMode {
+public class alexAutoBlue1 extends LinearOpMode {
     /* Declare OpMode members. */
     private DcMotor backLeftDrive;
     private DcMotor frontLeftDrive;
