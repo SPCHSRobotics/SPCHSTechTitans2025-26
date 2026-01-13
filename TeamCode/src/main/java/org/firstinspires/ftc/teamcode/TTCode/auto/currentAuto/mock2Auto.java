@@ -84,9 +84,6 @@ public class mock2Auto extends OpMode {
     }
 
 
-
-
-
     // State Machine
     boolean set1Completed = false;
     boolean set2Completed = false;
