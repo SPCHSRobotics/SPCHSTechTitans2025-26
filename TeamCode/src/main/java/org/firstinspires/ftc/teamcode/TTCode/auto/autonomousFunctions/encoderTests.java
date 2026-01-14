@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos.autonomousFunctions;
+package org.firstinspires.ftc.teamcode.TTCode.auto.autonomousFunctions;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;

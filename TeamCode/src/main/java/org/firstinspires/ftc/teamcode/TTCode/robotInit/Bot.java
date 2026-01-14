@@ -1,9 +1,11 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode.robotInit;
+package org.firstinspires.ftc.teamcode.TTCode.robotInit;
 
+import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.IMU;
 
 public class Bot {
 
@@ -14,6 +16,9 @@ public class Bot {
             leftShooter, rightShooter,
             intakeMotor;
 
+    public IMU
+            imu;
+
     public void initHardware(HardwareMap hwMap) {
         frontLeftDrive = hwMap.get(DcMotor.class, "frontLeftDrive");
         backLeftDrive = hwMap.get(DcMotor.class, "backLeftDrive");
@@ -22,8 +27,17 @@ public class Bot {
 
         leftShooter = hwMap.get(DcMotorEx.class, "leftShooter");
         rightShooter = hwMap.get(DcMotorEx.class, "rightShooter");
-
         intakeMotor = hwMap.get(DcMotorEx.class, "intakeMotor");
+
+        imu = hwMap.get(IMU.class, "imu");
+
+        RevHubOrientationOnRobot revHubOrientation = new RevHubOrientationOnRobot(
+                RevHubOrientationOnRobot.LogoFacingDirection.UP,
+                RevHubOrientationOnRobot.UsbFacingDirection.FORWARD
+        );
+
+        imu.initialize(new IMU.Parameters(revHubOrientation));
+        imu.resetYaw();
     }
 
     public void setMotors() {
@@ -43,5 +57,15 @@ public class Bot {
         leftShooter.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rightShooter.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    }
+
+    public void RUN_WITHOUT_ENCODERS() {
+        leftShooter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        rightShooter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        intakeMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        frontLeftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backLeftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        frontRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
 }

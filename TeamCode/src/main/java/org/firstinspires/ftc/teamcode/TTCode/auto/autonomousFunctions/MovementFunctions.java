@@ -1,9 +1,9 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos.autonomousFunctions;
+package org.firstinspires.ftc.teamcode.TTCode.auto.autonomousFunctions;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.teamcode.sandboxes.alexCode.robotInit.Bot;
+import org.firstinspires.ftc.teamcode.TTCode.robotInit.Bot;
 
 public class MovementFunctions {
 
@@ -17,6 +17,7 @@ public class MovementFunctions {
     }
 
     // Power Constants
+    final double REVERSE_POWER = -0.4;
     final double FORWARD_POWER = 0.5;
     final double TURN_POWER = 1;
 
@@ -26,6 +27,23 @@ public class MovementFunctions {
         bot.backLeftDrive.setPower(FORWARD_POWER);
         bot.frontRightDrive.setPower(FORWARD_POWER);
         bot.backRightDrive.setPower(FORWARD_POWER);
+
+        runtime.reset();
+        while (opMode.opModeIsActive() && runtime.seconds() < duration) {
+            opMode.telemetry.update();
+        }
+
+        bot.frontLeftDrive.setPower(0);
+        bot.backLeftDrive.setPower(0);
+        bot.frontRightDrive.setPower(0);
+        bot.backRightDrive.setPower(0);
+    }
+
+    public void backward(double duration) {
+        bot.frontLeftDrive.setPower(REVERSE_POWER);
+        bot.backLeftDrive.setPower(REVERSE_POWER);
+        bot.frontRightDrive.setPower(REVERSE_POWER);
+        bot.backRightDrive.setPower(REVERSE_POWER);
 
         runtime.reset();
         while (opMode.opModeIsActive() && runtime.seconds() < duration) {

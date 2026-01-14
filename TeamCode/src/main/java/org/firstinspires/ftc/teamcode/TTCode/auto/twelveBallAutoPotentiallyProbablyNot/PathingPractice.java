@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.TTCode.auto.currentAuto;
+package org.firstinspires.ftc.teamcode.TTCode.auto.twelveBallAutoPotentiallyProbablyNot;
 
 import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.BezierLine;
@@ -8,10 +8,10 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.pedropathing.util.Timer;
 
-import org.firstinspires.ftc.teamcode.TTCode.auto.currentAuto.pedroPathing.Constants;
+import org.firstinspires.ftc.teamcode.TTCode.auto.twelveBallAutoPotentiallyProbablyNot.pedroPathing.Constants;
 
 @Autonomous (name="Kool Kids Auto")
-public class mock2Auto extends OpMode {
+public class PathingPractice extends OpMode {
 
 
     private Follower follower;

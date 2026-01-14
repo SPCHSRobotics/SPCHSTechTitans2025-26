@@ -1,10 +1,10 @@
-package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexAutos.autonomousFunctions;
+package org.firstinspires.ftc.teamcode.TTCode.auto.autonomousFunctions;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.teamcode.sandboxes.alexCode.robotInit.Bot;
+import org.firstinspires.ftc.teamcode.TTCode.robotInit.Bot;
 
 public class ShootingFunctions {
 
@@ -105,6 +105,55 @@ public class ShootingFunctions {
 
         transfer();
 
+        bot.leftShooter.setPower(0);
+        bot.rightShooter.setPower(0);
+    }
+
+    public void shootOld() {
+        bot.leftShooter.setPower(-0.5);
+        bot.rightShooter.setPower(-0.5);
+
+        runtime.reset();
+        while (opMode.opModeIsActive() && (runtime.seconds() < 2.5)) {
+            opMode.telemetry.update();
+        }
+
+        bot.intakeMotor.setPower(-0.6);
+
+        runtime.reset();
+        while (opMode.opModeIsActive() && (runtime.seconds() < 0.13)) {
+            opMode.telemetry.update();
+        }
+
+        bot.intakeMotor.setPower(0);
+
+        runtime.reset();
+        while (opMode.opModeIsActive() && (runtime.seconds() < 2.5)) {
+            opMode.telemetry.update();
+        }
+
+        bot.intakeMotor.setPower(-0.6);
+
+        runtime.reset();
+        while (opMode.opModeIsActive() && (runtime.seconds() < 0.13)) {
+            opMode.telemetry.update();
+        }
+
+        bot.intakeMotor.setPower(0);
+
+        runtime.reset();
+        while (opMode.opModeIsActive() && (runtime.seconds() < 2.5)) {
+            opMode.telemetry.update();
+        }
+
+        bot.intakeMotor.setPower(-0.6);
+
+        runtime.reset();
+        while (opMode.opModeIsActive() && (runtime.seconds() < 1.0)) {
+            opMode.telemetry.update();
+        }
+
+        bot.intakeMotor.setPower(0);
         bot.leftShooter.setPower(0);
         bot.rightShooter.setPower(0);
     }

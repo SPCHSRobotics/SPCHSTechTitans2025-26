@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.TTCode.auto.currentAuto.pedroPathing;
+package org.firstinspires.ftc.teamcode.TTCode.auto.twelveBallAutoPotentiallyProbablyNot.pedroPathing;
 
 import com.bylazar.configurables.PanelsConfigurables;
 import com.bylazar.configurables.annotations.Configurable;

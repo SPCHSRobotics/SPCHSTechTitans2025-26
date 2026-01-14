@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.TTCode.auto.currentAuto.pedroPathing;
+package org.firstinspires.ftc.teamcode.TTCode.auto.twelveBallAutoPotentiallyProbablyNot.pedroPathing;
 
 import com.pedropathing.follower.Follower;
 import com.pedropathing.follower.FollowerConstants;
