@@ -63,7 +63,7 @@ public class Drive {
         double newY = r * Math.sin(theta);
 
         // Drive using the drive function
-        this.drive(newX, newY, turn);
+        drive(newX, newY, turn);
 
         // Telemetry
         telemetry.addData("Heading", bot.imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.DEGREES));

@@ -1,8 +1,5 @@
 package org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions;
 
-import com.qualcomm.robotcore.hardware.DcMotorEx;
-
-
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.TTCode.robotInit.Bot;
 
