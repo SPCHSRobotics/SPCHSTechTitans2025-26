@@ -7,11 +7,9 @@ import org.firstinspires.ftc.teamcode.TTCode.robotInit.Bot;
 
 public class Shooter {
     Bot bot;
-    ElapsedTime runtime;
     Telemetry telemetry;
-    public Shooter(Bot bot, ElapsedTime runtime, Telemetry telemetry) {
+    public Shooter(Bot bot, Telemetry telemetry) {
         this.bot = bot;
-        this.runtime = runtime;
         this.telemetry = telemetry;
     }
 
@@ -19,10 +17,12 @@ public class Shooter {
 
     public void shooter(boolean active) {
         if (active) {
-            bot.intakeMotor.setPower(SHOOTER_POWER);
+            bot.leftShooter.setPower(SHOOTER_POWER);
+            bot.rightShooter.setPower(SHOOTER_POWER);
             telemetry.addData("Shooter", "On");
         } else {
-            bot.intakeMotor.setPower(0);
+            bot.leftShooter.setPower(0);
+            bot.rightShooter.setPower(0);
             telemetry.addData("Shooter", "Off");
         }
     }

@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexTeleOp.mock1;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -7,6 +8,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 /* i bought a usb-a to usb-c adapter
 --to put on the orange dongle-- inside of the white big toolbox (big bottom right drawer, please return it to original home after use*/
 
+@Disabled
 @TeleOp (name="Alex OpMode Bot 1", group="Linear OpMode")
 public class alexMainMock1 extends LinearOpMode {
     private final ElapsedTime runtime = new ElapsedTime();

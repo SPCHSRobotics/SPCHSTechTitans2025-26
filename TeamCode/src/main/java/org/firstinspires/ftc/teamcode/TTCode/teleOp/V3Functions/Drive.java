@@ -7,13 +7,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.teamcode.TTCode.robotInit.Bot;
 
 public class Drive {
-
     Bot bot;
-    ElapsedTime runtime;
     Telemetry telemetry;
-    public Drive(Bot bot, ElapsedTime runtime, Telemetry telemetry) {
+    public Drive(Bot bot, Telemetry telemetry) {
         this.bot = bot;
-        this.runtime = runtime;
         this.telemetry = telemetry;
     }
 
@@ -70,6 +67,12 @@ public class Drive {
 
         // Telemetry
         telemetry.addData("Heading", bot.imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.DEGREES));
+    }
+
+    public void resetYaw(boolean pressed) {
+        if (pressed) {
+            bot.imu.resetYaw();
+        }
     }
 
 }

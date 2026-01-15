@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.teamcode.TTCode.robotInit.Bot;
 import org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions.Drive;
 import org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions.Intake;
+import org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions.Outtake;
 import org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions.Shooter;
 
 @TeleOp(name="THE Cucumber TeleOp")
@@ -16,14 +17,9 @@ public class Main extends OpMode {
     Bot bot = new Bot();
     ElapsedTime runtime = new ElapsedTime();
 
-    // Call Function Classes In
-    Intake intake =  new Intake(bot, runtime, telemetry);
-    Shooter shooter = new Shooter(bot, runtime, telemetry);
-    Drive drive = new Drive(bot, runtime, telemetry);
-
-
     @Override
     public void init() {
+
         bot.initHardware(hardwareMap);
         bot.setMotors();
 
@@ -33,27 +29,33 @@ public class Main extends OpMode {
         telemetry.update();
     }
 
+    Intake intake =  new Intake(bot, telemetry);
+    Shooter shooter = new Shooter(bot, telemetry);
+    Drive drive = new Drive(bot, telemetry);
+
     @Override
     public void loop() {
-        // inputs
-
+        /*---------Inputs---------*/
         // drivetrain
         double x, y, turn;
+        boolean resetYaw;
         x = -gamepad1.left_stick_x;
         y = -gamepad1.left_stick_y;
         turn = gamepad1.right_stick_x;
+        resetYaw = gamepad1.aWasPressed();
 
         // Intake/Shooters
         boolean intakeHold, shooterHold, outtakeHold;
-        intakeHold = gamepad2.a;
-        shooterHold = gamepad2.b;
-        outtakeHold = gamepad2.x;
+        intakeHold = (gamepad2.right_trigger > 0.5);
+        shooterHold = (gamepad2.left_trigger > 0.5);
+        outtakeHold = gamepad2.a;
+        /*------------------------*/
 
         // Functions
-        intake.intake(intakeHold);
-        intake.outtake(outtakeHold);
+        intake.intake(intakeHold, outtakeHold);
         shooter.shooter(shooterHold);
         drive.fieldCentricDrive(x, y, turn);
+        drive.resetYaw(resetYaw);
 
         // Telemetry
         telemetry.addData("Elapsed Time", runtime.seconds());

@@ -1,13 +1,14 @@
 package org.firstinspires.ftc.teamcode.sandboxes.alexCode.alexTeleOp.mock2;
 
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.IMU;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
 
-
+@Disabled
 @TeleOp(name="Test the IMU")
 public class IMUTest extends OpMode {
     YawPitchRollAngles robotOrientation;
