@@ -25,6 +25,7 @@ public class Intake {
         } else {
             bot.intakeMotor.setPower(0);
             telemetry.addData("Intake", "Off");
+            telemetry.addData("Outtake", "Off");
         }
     }
 

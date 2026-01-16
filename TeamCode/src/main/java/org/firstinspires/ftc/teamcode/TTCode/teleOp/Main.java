@@ -7,7 +7,6 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.teamcode.TTCode.robotInit.Bot;
 import org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions.Drive;
 import org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions.Intake;
-import org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions.Outtake;
 import org.firstinspires.ftc.teamcode.TTCode.teleOp.V3Functions.Shooter;
 
 @TeleOp(name="THE Cucumber TeleOp")
